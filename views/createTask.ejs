@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <form action="/tasks/add" method="post">
+        <div class="mb-3">
+          <label for="name" class="form-label">Task Name</label>
+          <input type="text"
+            class="form-control" required name="name" id="name" aria-describedby="nameLabel" placeholder="Task Name">
+          <small id="nameLabel" class="form-text text-muted">Help text</small>
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea required class="form-control" name="description" id="description" rows="3"></textarea>
+        </div>
+         <div class="mb-3">
+           <label for="author" required class="form-label">Author Name</label>
+           <input type="text"
+             class="form-control" name="author" id="author" aria-describedby="authorlabel" placeholder="Author Name">
+           <small id="authorlabel" class="form-text text-muted">Enter Author Name</small>
+         </div>
+         <div class="mb-3">
+           <label for="labels" class="form-label">Labels</label>
+           <select multiple required class="form-control" name="labels" id="labels">
+               <% for(let label of labels) { %>
+                <option value="<%= label.id %>"><%= label.name %></option>
+                <% } %>
+            </select>
+            <div class="mt-2">
+            <a href="/label/addLabel" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> add label</a>
+            </div>
+         </div>
+         <div class="mb-3">
+            <label for="project" class="form-label">Project</label>
+            <select class="form-control" required name="project" id="project">
+                <option value="<%= projects.id %>"><%= projects.name %></option>
+            </select>
+         </div>
+         <button type="submit" class="btn btn-primary">Add Task</button>
+    </form>
+</div>

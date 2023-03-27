@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Tasks List</h1>
+        <a href="/tasks/create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Create Task</a>
+    </div>
+    <div>
+            <% for (let label of labels){ %>
+            <div class="card shadow p-3 mt-3 mb-3 bg-primary text-white">
+                <div class=""><%= label.name %></div>
+                <div class="row">
+                <% for (let task of tasks) { %>
+                        <% task.labels.forEach(labeltemp => { %>
+                           <%  if(labeltemp.name===label.name){ %>
+                            <div class="col-md-4">
+                                <div class="card shadow p-3 text-dark">
+                                    <h3><%= task.name %></h3>
+                                    <p><%= task.description%></p>
+                                    <p><%= task.author%></p>
+                                    <p><%= task.project.name%></p>
+                                </div>  
+                            </div>
+                           <% } %>
+                            <% }) %>
+                <% }%>
+                </div>
+            </div>
+            <% } %>
+    </div>
+</div>

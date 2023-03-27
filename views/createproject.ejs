@@ -1,0 +1,21 @@
+<div class="container-fluid">
+    <form method="post" action="/add">
+        <div class="mb-3">
+          <label for="name" class="form-label">Project Name</label>
+          <input type="text"
+            class="form-control" required name="name" id="name" aria-describedby="name_label" placeholder="Project Name">
+          <small id="name_label" class="form-text text-muted">Enter Project Name</small>
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea class="form-control" required name="description" id="description" rows="3"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="author" class="form-label">Author</label>
+          <input type="text"
+            class="form-control" name="author" required id="author" aria-describedby="author" placeholder="Author Name">
+          <small id="author" class="form-text text-muted">Author Name</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Project</button>      
+    </form>
+</div>

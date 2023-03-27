@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Project List</h1>
+        <a href="/create" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Create Project</a>
+    </div>
+    <div>
+        <% for(let project of projects){ %>
+            <div class="card p-3 shadow mb-3 mt-3">
+                <div class="row">
+                    <div class="col-md-auto">
+                    <h2><%= project.name %></h2>
+                    </div>
+                    <div class="col-md-auto ml-auto">
+                        tasks : <%=project.tasks.length %>
+                    </div>
+                </div>
+                <hr class="m-2">
+                <div class="row">
+                 <div class="col-md-auto mr-auto">
+                    <%= project.description %>
+                 </div>
+                 <div class="col-md-auto ml-auto">
+                    <a class="btn btn-primary" href="project/<%= project.id %>">Launch Project</a>
+                 </div>   
+                </div>
+            </div>
+        <% } %>
+    </div>
+</div>
