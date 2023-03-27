@@ -1,26 +1,26 @@
 const mongoose = require('mongoose');
 const TaskSchema = new mongoose.Schema({
+    //Task Name
     name:{
         type:String,
         required:true,
     },
+    // Task Description
     description:{
         type:String,
         required:true,
     },
-    status:{
-        type:String,
-        enum:['To do','In Progress',"Done"],
-        default:'To do'
-    },
+    //Task Author
     author:{
         type:String,
         required:true,
     },
+    //List of Labels Associated with the particular task
     labels:[{
         type:mongoose.Schema.Types.ObjectId,
         ref:'Label',
     }],
+    //Project Reference
     project:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"Project"
