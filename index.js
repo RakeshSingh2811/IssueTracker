@@ -18,7 +18,7 @@ const customMware=require('./config/middleware');
 
 
 //port number
-const port = 8000;
+const port = process.env.PORT || 8000;
 
 //using ejs Layouts
 const expressLayouts= require('express-ejs-layouts');
